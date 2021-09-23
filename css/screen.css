@@ -20,6 +20,15 @@
 \*------------------------------------*/
 
 :root {
+
+    --global-text-color-light: #20223a;
+
+    --global-background-color-light: #F5F6FA;
+
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+
     --text-color: #20223a;
     --bg-color: #F5F6FA;
     --selection-color:#3385FF;
@@ -42,11 +51,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: 'Inter Web', Helvetica, arial, sans-serif;
-    color: var(--text-color);
+    color: var(--global-text-color-light);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--bg-color);
+    background-color: var(--global-background-color-light);
 }
 
 *,
@@ -63,13 +72,13 @@ html {
 */
 
 ::-moz-selection {
-    background: var(--selection-color);
+    background: var(--global-color-alpha);
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: var(--selection-color);
+    background: var(--global-color-alpha);
     color: white;
     text-shadow: none;
 }
@@ -174,18 +183,17 @@ hr {
 }
 
 a {
-    color: var(--link-color);
+   color: var(--global-color-alpha);
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: var(--link-color);
+    color: var(--global-color-alpha);
 }
-
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: var(--global-color-alpha-light);
 }
 
 label, input {
@@ -214,6 +222,10 @@ input[type=checkbox] + label {
 
 .o-row--login {
     /* stuff here to align the card */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* size modifiers */
@@ -518,14 +530,11 @@ input[type=checkbox] + label {
 .c-card__footer {
     padding: 24px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     border-top: 1px solid #E2E3E7;
 }
 .c-card__footer p {
     margin-bottom: 0;
+    font-size: 14px;
 }
 
 /*
@@ -558,7 +567,7 @@ input[type=checkbox] + label {
     line-height: 24px;
     padding: 11px;
 
-    color: var(--text-color);
+    color: var(--global-text-color-light);
 }
 
 .c-input:hover {
@@ -609,9 +618,13 @@ input[type=checkbox] + label {
     color:#606274;
 }
 
-.c-label--option {
+.c-label--option--1 {
     margin-bottom: 0;
     margin-left: 8px;
+}
+.c-label--option--2 {
+    margin-bottom: 48px !important;
+    margin-top: 16px !important;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
